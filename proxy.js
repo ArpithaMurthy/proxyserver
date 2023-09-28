@@ -1,12 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const app = express();
 const port = 3000;
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 // Define a route that proxies the request to the target API
 app.post("/proxy", async (req, res) => {
